@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kontak - QuizMaster</title>
+  <link rel="stylesheet" href="/css/contact.css">
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">QuizMaster</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="about.html">Tentang</a></li>
+        <li><a href="features.html">Fitur</a></li>
+        <li><a href="contact.html">Kontak</a></li>
+        <li><a href="quiz.html">Quiz-card</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <h2>Hubungi Kami / Daftar</h2>
+      <form id="contactForm">
+        <label for="name">Nama Lengkap:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="interest">Minat Belajar:</label>
+        <select id="interest" name="interest" required>
+          <option value="">-- Pilih Minat --</option>
+          <option value="Matematika">Matematika</option>
+          <option value="Bahasa Inggris">Bahasa Inggris</option>
+          <option value="Sains">Sains</option>
+          <option value="Teknologi">Teknologi</option>
+        </select>
+
+        <button type="submit">Kirim</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 GMS.</p>
+  </footer>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      alert("Pesan Anda terkirim! Terima kasih telah mendaftar.");
+      this.reset(); // Optionally reset the form
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kuis Umum - QuizMaster</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f9ff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background-color: #0066cc;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em 2em;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5em;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 2em auto;
+      background-color: white;
+      padding: 2em;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #003366;
+    }
+
+    .question {
+      margin-bottom: 2em;
+    }
+
+    .question p {
+      font-weight: bold;
+    }
+
+    .options label {
+      display: block;
+      margin-bottom: 0.5em;
+    }
+
+    button {
+      background-color: #0066cc;
+      color: white;
+      padding: 0.8em 1.5em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+      display: block;
+      margin: 1em auto;
+    }
+
+    button:hover {
+      background-color: #004a99;
+    }
+
+    .result {
+      text-align: center;
+      margin-top: 2em;
+      font-size: 1.2em;
+      color: #005500;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <h1>QuizMaster</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="quiz.html">Kuis</a></li>
+        <li><a href="score.html">Skor</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>Kuis Pengetahuan Umum</h2>
+    <form id="quizForm">
+      <div class="question">
+        <p>1. Ibukota negara Jepang adalah?</p>
+        <div class="options">
+          <label><input type="radio" name="q1" value="Tokyo"> Tokyo</label>
+          <label><input type="radio" name="q1" value="Seoul"> Seoul</label>
+          <label><input type="radio" name="q1" value="Beijing"> Beijing</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p>2. Siapa penemu lampu pijar?</p>
+        <div class="options">
+          <label><input type="radio" name="q2" value="Thomas Edison"> Thomas Edison</label>
+          <label><input type="radio" name="q2" value="Albert Einstein"> Albert Einstein</label>
+          <label><input type="radio" name="q2" value="Isaac Newton"> Isaac Newton</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p>3. Hewan tercepat di darat adalah?</p>
+        <div class="options">
+          <label><input type="radio" name="q3" value="Cheetah"> Cheetah</label>
+          <label><input type="radio" name="q3" value="Kuda"> Kuda</label>
+          <label><input type="radio" name="q3" value="Singa"> Singa</label>
+        </div>
+      </div>
+
+      <button type="submit">Kirim Jawaban</button>
+    </form>
+
+    <div class="result" id="result"></div>
+  </main>
+
+  <script>
+    document.getElementById("quizForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const answers = {
+        q1: "Tokyo",
+        q2: "Thomas Edison",
+        q3: "Cheetah"
+      };
+
+      let score = 0;
+      for (let key in answers) {
+        const selected = document.querySelector(`input[name="${key}"]:checked`);
+        if (selected && selected.value === answers[key]) {
+          score++;
+        }
+      }
+
+      // Save score to localStorage
+      localStorage.setItem("generalQuizScore", score);
+
+      document.getElementById("result").textContent = `Skor Anda: ${score} dari 3`;
+    });
+  </script>
+
+</body>
+</html>

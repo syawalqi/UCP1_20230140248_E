@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fitur - QuizMaster</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4faff;
+      color: #333;
+    }
+
+    .navbar {
+      background-color: #0066cc;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em 2em;
+    }
+
+    .logo {
+      font-size: 1.5em;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5em;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .container {
+      padding: 2em;
+    }
+
+    .feature-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2em;
+      margin-bottom: 3em;
+    }
+
+    .feature-card {
+      background-color: white;
+      padding: 1.5em;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .feature-card img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 1em;
+    }
+
+    .video-section {
+      text-align: center;
+    }
+
+    .video-section iframe {
+      width: 90%;
+      max-width: 700px;
+      height: 400px;
+      border-radius: 10px;
+      border: none;
+    }
+
+    footer {
+      background-color: #0066cc;
+      color: white;
+      text-align: center;
+      padding: 1em;
+      font-size: 0.9em;
+      margin-top: 2em;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">QuizMaster</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="about.html">Tentang</a></li>
+        <li><a href="features.html">Fitur</a></li>
+        <li><a href="contact.html">Kontak</a></li>
+        <li><a href="quiz.html">Quiz-card</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2 style="text-align:center; margin-bottom: 1.5em;">Galeri Fitur</h2>
+    <div class="feature-gallery">
+      <div class="feature-card">
+        <img src="pic/quizLP.jpg" alt="Soal interaktif">
+        <h3>Kuis Interaktif</h3>
+        <p>Latihan soal dengan berbagai topik dan tingkat kesulitan.</p>
+      </div>
+      <div class="feature-card">
+        <img src="pic/scoreLP.jpg" alt="Pelacakan Kemajuan">
+        <h3>Progress Tracking</h3>
+        <p>Lihat kemajuan belajar kamu secara real-time.</p>
+      </div>
+      <div class="feature-card">
+        <img src="pic/leaderboard.jpg" alt="Badge Penghargaan">
+        <h3>Penghargaan</h3>
+        <p>Dapatkan badge & poin untuk setiap pencapaian.</p>
+      </div>
+    </div>
+
+    <div class="video-section">
+      <h2>Contoh Materi Pembelajaran</h2>
+      <p>Tonton video singkat berikut sebagai contoh pembelajaran visual.</p>
+      <iframe src="https://youtu.be/lZ3bPUKo5zc?si=B_VHySEPkqLWWmUX" allowfullscreen></iframe>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 GMS</p>
+  </footer>
+
+</body>
+</html>

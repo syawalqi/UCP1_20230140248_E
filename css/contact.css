@@ -1,0 +1,83 @@
+body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f8ff;
+      color: #333;
+    }
+
+    .navbar {
+      background-color: #0066cc;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em 2em;
+    }
+
+    .logo {
+      font-size: 1.5em;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5em;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 2em auto;
+      background: white;
+      padding: 2em;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #003366;
+      margin-bottom: 1em;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5em;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 0.8em;
+      margin-bottom: 1.5em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #0066cc;
+      color: white;
+      border: none;
+      padding: 0.8em 1.5em;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #004c99;
+    }
+
+    footer {
+      background-color: #0066cc;
+      color: white;
+      text-align: center;
+      padding: 1em;
+      margin-top: 3em;
+    }

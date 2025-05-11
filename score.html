@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skor - QuizMaster</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f9ff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background-color: #0066cc;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em 2em;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5em;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 2em auto;
+      background-color: white;
+      padding: 2em;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #003366;
+    }
+
+    .score-list {
+      margin-top: 2em;
+    }
+
+    .score-list p {
+      font-size: 1.2em;
+      padding: 0.5em 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .score-list p span {
+      font-weight: bold;
+      color: #0066cc;
+    }
+
+    .no-scores {
+      text-align: center;
+      font-size: 1.2em;
+      color: #ff0000;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <h1>QuizMaster</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="quiz.html">Kuis</a></li>
+        <li><a href="score.html">Skor</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>Skor Anda</h2>
+    <div class="score-list">
+      <p><span>Matematika:</span> <span id="mathScore">Belum ada skor</span></p>
+      <p><span>Bahasa Inggris:</span> <span id="englishScore">Belum ada skor</span></p>
+      <p><span>Ilmu Pengetahuan:</span> <span id="scienceScore">Belum ada skor</span></p>
+      <p><span>Teknologi:</span> <span id="technologyScore">Belum ada skor</span></p>
+      <p><span>Pengetahuan Umum:</span> <span id="generalScore">Belum ada skor</span></p>
+    </div>
+
+    <div class="no-scores" id="noScoresMessage"></div>
+  </main>
+
+  <script>
+    // Function to update the score display
+    function displayScores() {
+      const mathScore = localStorage.getItem("mathQuizScore");
+      const englishScore = localStorage.getItem("englishQuizScore");
+      const scienceScore = localStorage.getItem("scienceQuizScore");
+      const technologyScore = localStorage.getItem("technologyQuizScore");
+      const generalScore = localStorage.getItem("generalQuizScore");
+
+      document.getElementById("mathScore").textContent = mathScore ? `${mathScore} dari 3` : "Belum ada skor";
+      document.getElementById("englishScore").textContent = englishScore ? `${englishScore} dari 3` : "Belum ada skor";
+      document.getElementById("scienceScore").textContent = scienceScore ? `${scienceScore} dari 3` : "Belum ada skor";
+      document.getElementById("technologyScore").textContent = technologyScore ? `${technologyScore} dari 3` : "Belum ada skor";
+      document.getElementById("generalScore").textContent = generalScore ? `${generalScore} dari 3` : "Belum ada skor";
+
+      // If all scores are null, display a no scores message
+      if (!mathScore && !englishScore && !scienceScore && !technologyScore && !generalScore) {
+        document.getElementById("noScoresMessage").textContent = "Belum ada kuis yang dikerjakan.";
+      }
+    }
+
+    // Call function to display scores when page loads
+    window.onload = displayScores;
+  </script>
+
+</body>
+</html>
